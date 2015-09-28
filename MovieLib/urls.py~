@@ -1,0 +1,15 @@
+from django.conf.urls import patterns, url
+from MovieLib import views
+from MovieLib.views import IndexView, CreateView, UpdateView, DeleteView
+
+urlpatterns = patterns('',
+    url(r'^$', views.IndexView.as_view()),
+    url(r'^CreateView/$', 'MovieLib.views.CreateView', name='movie_create'),
+    #url(r'^index/$', 'MovieLib.views.index', name='movie_index'), #new line
+    url(r'^edit/(?P<pk>\d+)$', views.UpdateView.as_view(), name='movie_edit'),
+    url(r'^delete/(?P<pk>\d+)$', views.DeleteView.as_view(), name='movie_delete'),
+    url(r'^create/$', 'MovieLib.views.create', name='movie_create'),
+    #url(r'^index/$', 'MovieLib.views.logout', name='movie_logout'),
+    url(r'^contact/$', 'MovieLib.views.contact', name='movie_contact'),
+
+)

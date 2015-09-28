@@ -1,0 +1,75 @@
+{% extends "base_page.html" %}
+
+{% block name %}successfully logout {% endblock %}
+
+{% block title %}User Contact{% endblock %}
+
+
+
+{% block content %}
+<center>
+<h1>Film Chamber Address </h1>
+
+<form action='#' method="post">
+
+	    <label >FilmsChamber: ATFA<br>
+
+             <label >Kondapur,<br> 
+                     Near: PTG, <br>
+                     HYD<br>
+
+             <label >Phno: 9652052824<br>
+             <label >Email: atfa2015@gmail.com
+</center>
+
+<center>
+
+<h2><marquee>User Contact</marquee></h2>
+
+<div>
+
+<form method="post" class="form">
+
+    {% csrf_token %}
+
+    {% for field in form %}
+
+        <div class="form-group">
+
+        {{ field.errors }}
+
+        {{ field.label_tag }}
+
+        {{ field }}
+
+        </div>
+
+    {% endfor %}
+
+    <input type="submit" value="Send">
+    <input type="reset" value="Clear">
+
+</form>
+
+</div>
+
+</center>
+
+<!--<center>
+<form action="contact.php" method="post">
+
+     Movie name<br>
+    <input type="text" name="Mname"><br>
+     Your name<br>
+    <input type="text" name="Uname"><br>
+    Your e-mail<br>
+    <input type="text" name="email"><br>
+    Message<br>
+	    
+     
+    <textarea rows="4" cols="18" name="message"></textarea><br>   
+    <input type="submit" value="Send">
+    <input type="reset" value="Clear">
+</form>
+</center>-->
+{% endblock%}

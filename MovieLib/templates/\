@@ -1,0 +1,19 @@
+{% extends "base_page.html" %}
+
+{% block name %}successfully logout {% endblock %}
+
+{% block content %}
+<form action="contact.php" method="post">
+
+     Your name<br>
+    <input type="text" name="mb_name"><br>
+    Your e-mail<br>
+    <input type="text" name="mb_email"><br>
+    Message<br>
+	    <!--<textarea name="mb_message"><br>-->
+     
+    <textarea rows="4" cols="18"></textarea>   
+    <input type="submit" value="Send">
+    <input type="reset" value="Clear">
+</form>
+{% endblock%}

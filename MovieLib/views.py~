@@ -1,0 +1,62 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
+from MovieLib.models import Movie
+from django.views.generic import ListView
+#from django.views.generic import CreateView
+#import django.views.generic.CreateView
+#rom django.views.generic import UpdateView
+#from django.views.generic import DeleteView
+from MovieLib.forms import MovieMixin
+
+# Create your views here.
+
+'''def index(request):
+    return HttpResponse("Hello Django!")
+	
+class IndexView(TemplateView):
+    template_name = 'index.html'''
+
+class IndexView(ListView):
+    template_name = 'index.html'
+   
+    model = Movie
+
+class CreateView(CreateView):
+    template_name = 'create.html'
+    model = Movie
+    #fields = ["title"]
+    success_url = '/'
+class UpdateView(UpdateView):
+    template_name = 'update.html'
+    model = Movie
+    success_url = '/'
+class DeleteView(MovieMixin, DeleteView):
+    template_name = 'delete_confirm.html'
+    def get_success_url(self):
+        return reverse('movie_index')
+
+def create(request):
+    return render(request,"create.html")
+
+def logout(request):
+    return render(request, 'logout.html')
+
+def index(request):
+    return render(request,"index.html")
+
+def contact(request):
+    return render(request,"contact.html")
+
+def base(request):
+    return render(request,"base_page.html")
+ 
+
+
+ 
+
+
+
+
+
+

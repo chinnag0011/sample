@@ -1,0 +1,21 @@
+{% extends "base_page.html" %}
+
+{% block title %}Create Movie{% endblock %}
+
+{% block content %}
+<h1>Create Movie</h1>
+<div>
+<form method="post" class="form">
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="form-group">
+        {{ field.errors }}
+        {{ field.label_tag }}
+        {{ field }}
+        </div>
+    {% endfor %}
+    <input type="submit" value="Submit" />
+</form>
+</div>
+{% endblock %}
+  

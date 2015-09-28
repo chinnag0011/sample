@@ -1,0 +1,33 @@
+{% extends "base_page.html" %}
+
+
+{% block title %}Movie Listing{% endblock %}
+
+
+
+{% block content %}
+<div ><font color="red">
+<h2><marquee>Welcome to Movie Library</marquee></h2>
+</font>
+</div>
+<h1>Movie Listing</h1>
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Price</th>
+        <th>Release Date</th>
+        <th> </th>
+    </tr>
+    {% for movie in object_list %}
+        <tr>
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.genre }}</td>
+            <td>{{ movie.price }}</td>
+            <td>{{ movie.release_date }}</td>
+            <td></td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+

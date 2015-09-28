@@ -1,0 +1,14 @@
+
+body {
+    padding-top: 20px;
+    background-image: url("images/images.jpeg");
+    background-repeat:no-repeat;
+background-size: cover;
+
+}
+.starter-template {
+    padding: 20px 10px;
+    margin-top: 2%;
+}
+
+.bodymain{background-color:#87CEFA;}
